@@ -84,8 +84,8 @@ multus:
 # Example config files --> https://gitlab.eurecom.fr/oai/openairinterface5g/-/tree/develop/targets/PROJECTS/GENERIC-NR-5GC/CONF
 config:
   # Pegatron frequency configuration
-  absoluteFrequencySSB: 649920  # 3748.8 MHz
-  dl_absoluteFrequencyPointA: 646724  # 3700.86 MHz
+  absoluteFrequencySSB: 641280  # 649920  # 3748.8 MHz
+  dl_absoluteFrequencyPointA: 640008 # 646724  # 3700.86 MHz
   # OAI
   #absoluteFrequencySSB: 623328
   #dl_absoluteFrequencyPointA: 620052
