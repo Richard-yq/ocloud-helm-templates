@@ -92,9 +92,16 @@ config:
   # Claude
   #absoluteFrequencySSB: 641280
   #dl_absoluteFrequencyPointA: 638004
+  # Ricahrd utilize
+  prach_ConfigurationIndex: 159 # 38.211
+  dl_carrierBandwidth: 273  # in number of PRBs
+  ul_carrierBandwidth: 273  # in number of PRBs
+  initialULBWPlocationAndBandwidth: 1099  # 1099 for 273 in number of PRBs 28875
+  initialDLBWPlocationAndBandwidth: 1099  # 1099 for 273 in number of PRBs 28875
+  msg1_FDM: 0  # 0=1,1=2,2=4,3=8
   timeZone: "Europe/Paris"
   #useAdditionalOptions: "--sa --log_config.global_log_options level,nocolor,time"
-  useAdditionalOptions: " --log_config.global_log_options level,nocolor,time" # Develop Branch
+  useAdditionalOptions: "--log_config.PRACH_debug --telnetsrv --telnetsrv.shrmod o1 --log_config.global_log_options level,nocolor,time" # Develop Branch
   gnbName: "oai-gnb-00"
   mcc: "001"   # check the information with AMF, SMF, UPF
   mnc: "01"    # check the information with AMF, SMF, UPF
