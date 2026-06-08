@@ -222,3 +222,45 @@ helm install oai-gnb .
 ## Note
 
 1. If you are using multus then make sure it is properly configured and if you don't have a gateway for your multus interface then avoid using gateway and defaultGateway parameter. Either comment them or leave them empty. Wrong gateway configuration can create issues with pod networking and pod will not be able to resolve service names.
+
+
+
+## LiteON RU
+
+```
+Last login: Mon Jun  8 10:23:22 on ttys041
+yq@yqdeMacBook-Air ~ % ssh user@192.168.8.77
+user@192.168.8.77's password: 
+Last login: Mon Jun  8 02:53:27 2026 from 192.168.8.9
+Welcome to Liteon ORU Mon Jun  8 07:31:47 UTC 2026
+Please enter help
+> enable
+Enter Password: 
+Auto exit privileged commands in 300 Seconds
+# show running-config 
+Band Width = 40000000
+Center Frequency = 3619200000
+Compression Bit = 9
+Control and User Plane vlan = 6
+M Plane vlan = 0
+default gateway = 
+dpd mode : Enable
+DU MAC Address = 001122334466
+phase compensation mode : Enable
+RX attenuation = 14
+TX attenuation = 24
+subcarrier spacing = 1
+rj45_vlan_ip = 10.101.131.61
+SFP_vlan_ip = 10.101.131.62
+SFP_non_vlan_static_ip = 192.168.1.100
+prach eAxC-id port 0, 1, 2, 3 = 0x0004, 0x0005, 0x0006, 0x0007
+slotid = 0x00000000
+jumboframe = 0x00000001
+sync source : PTP
+# show oru-status 
+Sync State  : SYNCHRONIZED
+RF State    : Ready
+DPD         : Ready
+DuConnected : Ready
+# 
+```
