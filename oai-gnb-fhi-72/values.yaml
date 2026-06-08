@@ -10,8 +10,8 @@ nfapi:
 ## To know more about them follow this tutorial https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed/-/tree/master/openshift
 nfimage:   # image name either locally present or in a public/private repository
   # BMW Branch
-  repository: bmw.ece.ntust.edu.tw/richardyq/oai-gnb-fhi72-fdm-enable
-  version: latest
+  repository: bmw.ece.ntust.edu.tw/richardyq/oai-gnb
+  version: richard
 
   # Develop Branch
   # repository: oaisoftwarealliance/oai-gnb-fhi72
@@ -94,14 +94,14 @@ config:
   #dl_absoluteFrequencyPointA: 638004
   # Ricahrd utilize
   prach_ConfigurationIndex: 159 # 38.211
-  dl_carrierBandwidth: 273  # in number of PRBs
-  ul_carrierBandwidth: 273  # in number of PRBs
-  initialULBWPlocationAndBandwidth: 1099  # 1099 for 273 in number of PRBs 28875
-  initialDLBWPlocationAndBandwidth: 1099  # 1099 for 273 in number of PRBs 28875
-  msg1_FDM: 0  # 0=1,1=2,2=4,3=8
+  dl_carrierBandwidth: 106 # 106 # 273  # in number of PRBs
+  ul_carrierBandwidth: 106 #106 # 273  # in number of PRBs
+  initialULBWPlocationAndBandwidth: 28875 #1099 #28875 # 1099  # 1099 for 273 in number of PRBs 28875
+  initialDLBWPlocationAndBandwidth: 28875 #1099 #28875 # 1099  # 1099 for 273 in number of PRBs 28875
+  msg1_FDM: 1  # 0=1,1=2,2=4,3=8
   timeZone: "Europe/Paris"
   #useAdditionalOptions: "--sa --log_config.global_log_options level,nocolor,time"
-  useAdditionalOptions: "--log_config.PRACH_debug --telnetsrv --telnetsrv.shrmod o1 --log_config.global_log_options level,nocolor,time" # Develop Branch
+  useAdditionalOptions: " --gNBs.[0].min_rxtxtime 6 --log_config.PRACH_debug --telnetsrv --telnetsrv.shrmod o1 --log_config.global_log_options level,nocolor,time" # Develop Branch
   gnbName: "oai-gnb-00"
   mcc: "001"   # check the information with AMF, SMF, UPF
   mnc: "01"    # check the information with AMF, SMF, UPF
@@ -112,7 +112,7 @@ config:
   ruCPlaneMacAdd: 00:aa:ff:bb:ff:cc
   ruUPlaneMacAdd: 00:aa:ff:bb:ff:cc
   #amfhost: "open5gs-amf-ngap.5gs-cn"
-  amfhost: "192.168.8.82" # BMW Open5GS
+  amfhost: "192.168.8.108" # BMW Open5GS
   n2IfName: "eth0"    # if multus.n2Interface.create is true then use n2
   n3IfName: "eth0"   #if multus.n3Interface.create is true then use n3 or you can only use 1 interface n2 or eth0
 
